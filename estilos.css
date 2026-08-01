@@ -82,3 +82,238 @@
         gap: 15px;
     }
 }
+
+/* Tarjeta contenedora */
+.custom-card {
+    width: 100%;
+    max-width: 400px; /* Tamaño máximo recomendado para mantener armonía en 2 columnas */
+    border-width: 3px !important;
+    background-color: #0055a4;
+    color: #dcf4a2;
+}
+
+.card-body {
+    background-color: #0055a4 !important;
+    color: #dcf4a2;
+    border-color: #0055a4 !important;
+}
+
+.card-title {
+    color: #dcf4a2;
+}
+
+/* Forzar la proporción 4:3 original */
+.photo-wrapper {
+    width: 100%;
+    aspect-ratio: 4 / 3; /* Define la geometría fija de pantalla estirada o TV antigua */
+    overflow: hidden;
+    position: relative; /* Clave para que el logo se posicione respecto a este cuadro */
+    background-color: #0055a4; /* Fondo de la tarjeta en el área de la foto */
+}
+
+/* Ajuste técnico de la imagen original */
+.photo-zoom {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Muestra la foto completa en su tamaño original sin recortar nada */
+    transition: transform 0.4s ease;
+}
+
+/* Zoom controlado al pasar el cursor */
+.photo-wrapper:hover .photo-zoom {
+    transform: scale(1.08); /* Un zoom sutil para no perder los bordes 4:3 */
+}
+
+/* Pequeño logo flotante en la esquina superior derecha */
+.expand-logo-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 10;
+    padding: 0;
+    transition: transform 0.2s;
+}
+
+.expand-logo-btn img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Efecto interactivo en el logo de la esquina */
+.expand-logo-btn:hover {
+    transform: scale(1.1);
+}
+
+.fullscreen-image {
+    max-height: 85vh;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-app-logo {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.footer-app-label {
+    font-size: 10px;
+}
+
+.footer-app-title {
+    font-size: 15px;
+}
+
+/* Estilos creativos del pie de página */
+.creative-footer {
+    border-top: 4px solid #dcf4a2;
+    background-color: #0055a4 !important;
+}
+
+/* Overlay para ver la imagen en pantalla completa */
+.fullscreen-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.96);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 9999;
+}
+
+.fullscreen-overlay.active {
+    display: flex;
+}
+
+.fullscreen-overlay img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+.fullscreen-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    color: black;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Decoración estética para los títulos */
+.footer-title-line::after {
+    content: ''; 
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #dcf4a2;
+}
+
+/* En caso de pantallas centradas en móvil, ajusta la línea decorativa */
+@media (max-width: 767px) {
+    .footer-title-line::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Colores de acento */
+.text-accent {
+    color: #dcf4a2 !important;
+}
+
+/* Animación y diseño del botón Google Play */
+.download-app-zone {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.download-app-zone:hover {
+    transform: translateY(-3px);
+    border-color: #dcf4a2 !important;
+}
+
+.google-play-link {
+    gap: 10px;
+}
+
+.footer-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Animaciones de los hipervínculos del navegador interno */
+.footer-nav-links a {
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.footer-nav-links a:hover {
+    color: #dcf4a2 !important;
+    padding-left: 6px; /* Desplazamiento interactivo al pasar el mouse */
+}
+
+/* Efecto de marco iluminado para los videos de YouTube */
+.footer-video-box .ratio {
+    border: 1px solid #333333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-video-box:hover .ratio {
+    border-color: #dcf4a2;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.3) !important;
+}
+
+/* Emoji de la cámara girando levemente en el logo */
+.camera-lens-icon {
+    display: inline-block;
+    font-size: 5px;
+    transition: transform 0.4s ease;
+}
+
+.footer-brand-box:hover .camera-lens-icon {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.inicio {
+    justify-content: center;
+    /* size: 3px; -> propiedad inválida; se elimina */
+}
+
+.camara {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.subtitulos2 {
+    font-size: 1.9rem;
+    color: #dcf4a2;
+    text-align: center;
+    font-family: "Kirang Haerang", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
